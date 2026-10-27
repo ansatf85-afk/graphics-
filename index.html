@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Graphics | كتالوج المنتجات</title>
+<meta name="description" content="أهلاً بيك في Graphics 👋 اتفرج على كتالوج الدروع والهدايا والطباعة واطلب بسهولة على واتساب.">
+<meta property="og:title" content="أهلاً بيك في Graphics 👋">
+<meta property="og:description" content="طباعة - تصميم - إعلانات · قص وحفر خشب ليزر. اتفرج على الكتالوج واطلب بسهولة.">
+<meta property="og:type" content="website">
+<link rel="icon" id="favicon" href="data:,">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#f2c14e;--gold2:#c98f1a;--cyan:#1fa2ff;--mag:#ff2d87;--yel:#ffd400;--bg:#07080d;--soft:#0e1018;--card:rgba(20,22,32,.78);--border:rgba(255,255,255,.09);--text:#f6f6f8;--muted:#9aa0b4;--danger:#ff4d5e;--wa:#25d366;--radius:18px}
+[data-theme=light]{--bg:#f3f4f8;--soft:#fff;--card:rgba(255,255,255,.86);--border:rgba(0,0,0,.09);--text:#16171d;--muted:#5d6272}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Cairo',Tahoma,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding-bottom:90px;overflow-x:hidden;transition:background .3s,color .3s}
+.bg{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
+.bg::before{content:'';position:absolute;inset:0;background:var(--bgimg,none) center/cover no-repeat;opacity:.38;filter:saturate(1.15);animation:breathe 16s ease-in-out infinite}
+.bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,8,13,.55),rgba(7,8,13,.82))}
+[data-theme=light] .bg::before{opacity:.28}
+[data-theme=light] .bg::after{background:linear-gradient(180deg,rgba(243,244,248,.7),rgba(243,244,248,.9))}
+.blob{position:absolute;width:46vmax;height:46vmax;border-radius:50%;filter:blur(110px);opacity:.28;animation:drift 22s ease-in-out infinite alternate}
+.b1{background:var(--cyan);top:-18%;right:-14%}
+.b2{background:var(--mag);bottom:-20%;left:-16%;animation-delay:-8s}
+.b3{background:var(--yel);top:35%;left:30%;opacity:.12;animation-delay:-14s}
+[data-theme=light] .blob{opacity:.16}
+@keyframes drift{to{transform:translate(8vw,-6vh) scale(1.15)}}
+@keyframes breathe{50%{transform:scale(1.07)}}
+#sparks{position:fixed;inset:0;z-index:-1;pointer-events:none}
+header{position:relative;text-align:center;padding:60px 16px 34px;border-bottom:1px solid var(--border);background:linear-gradient(180deg,rgba(255,255,255,.04),transparent)}
+.ctrl{position:absolute;top:16px;left:16px;display:flex;gap:10px;z-index:5}
+.dev-foot{display:block;width:90px;height:90px;margin:18px auto 8px;border-radius:50%;overflow:hidden;border:2px solid var(--gold);box-shadow:0 0 14px rgba(242,193,78,.35);transition:.25s;background:#fff}
+.dev-foot:hover{transform:scale(1.1) rotate(6deg)}
+.dev-foot img{width:100%;height:100%;object-fit:cover;display:block}
+.ibtn{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--gold);background:var(--card);color:var(--gold);cursor:pointer;font-size:1.05rem;display:grid;place-items:center;position:relative;backdrop-filter:blur(10px);transition:.25s}
+.ibtn:hover{background:var(--gold);color:#000;transform:scale(1.08) rotate(-6deg)}
+.cart-count{position:absolute;top:-6px;right:-6px;background:var(--danger);color:#fff;font-size:.7rem;font-weight:800;min-width:20px;height:20px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--bg)}
+h1{font-size:clamp(2rem,7vw,3.4rem);font-weight:900;letter-spacing:1px;background:linear-gradient(100deg,var(--cyan),var(--mag),var(--yel),var(--cyan));background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:flow 6s linear infinite;position:relative;display:inline-block}
+@keyframes flow{to{background-position:250% 0}}
+h1::after{content:'';position:absolute;top:-10%;bottom:-10%;width:3px;right:0;background:#fff;box-shadow:0 0 14px 4px var(--mag),0 0 30px 10px var(--cyan);animation:laser 1.6s .5s ease-in-out both}
+@keyframes laser{0%{right:0;opacity:1}90%{opacity:1}100%{right:100%;opacity:0}}
+.tag{color:var(--muted);font-size:clamp(.9rem,2.6vw,1.05rem);margin-top:4px}
+.phones{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:18px}
+.phone-pill{display:inline-flex;align-items:center;gap:10px;padding:10px 24px;border-radius:60px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1a1200;font-weight:900;font-size:1.1rem;text-decoration:none;direction:ltr;box-shadow:0 8px 26px rgba(242,193,78,.35);transition:.25s}
+.phone-pill:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 14px 34px rgba(242,193,78,.5)}
+.phone-pill i{animation:ring 2.4s infinite}
+@keyframes ring{0%,60%,100%{transform:rotate(0)}65%,75%,85%{transform:rotate(-16deg)}70%,80%{transform:rotate(16deg)}}
+.contact{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;padding:16px 10px;border-bottom:1px solid var(--border);backdrop-filter:blur(8px);background:var(--card)}
+.social{display:inline-flex;align-items:center;gap:7px;padding:8px 18px;border-radius:50px;color:#fff;text-decoration:none;font-weight:700;font-size:.85rem;box-shadow:0 4px 12px rgba(0,0,0,.3);transition:.25s}
+.social:hover{transform:translateY(-3px) scale(1.04)}
+.ig{background:linear-gradient(45deg,#f09433,#dc2743,#bc1888)}
+.fb{background:#1877f2}
+.tg{background:#0088cc}
+.wa{background:var(--wa)}
+.search{max-width:640px;margin:26px auto 12px;padding:0 16px;position:relative}
+.search input{width:100%;padding:15px 52px 15px 20px;border-radius:50px;border:2px solid var(--border);background:var(--card);color:var(--text);font:inherit;font-size:1rem;outline:none;backdrop-filter:blur(10px);transition:.25s}
+.search input:focus{border-color:var(--gold);box-shadow:0 0 0 5px rgba(242,193,78,.16)}
+.search i{position:absolute;right:34px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:6px 16px 10px;max-width:1150px;margin:0 auto;justify-content:center;flex-wrap:wrap}
+.chip{padding:7px 18px;border-radius:50px;border:1px solid var(--border);background:var(--card);color:var(--text);font:inherit;font-weight:700;font-size:.88rem;cursor:pointer;transition:.2s}
+.chip:hover{border-color:var(--gold)}
+.chip.on{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1a1200;border-color:transparent;box-shadow:0 4px 16px rgba(242,193,78,.35)}
+.subchips{display:none;padding-top:0}
+.subchips.show{display:flex}
+.subchips .chip{font-size:.82rem;padding:5px 16px;border-style:dashed}
+.subchips .chip.on{border-style:solid}
+.container{max-width:1150px;margin:0 auto;padding:0 16px}
+.sec{display:flex;align-items:center;gap:10px;margin:26px 0 18px;font-size:1.3rem;font-weight:800;color:var(--gold)}
+.sec .count{margin-right:auto;font-size:.8rem;color:var(--muted);background:var(--card);padding:3px 14px;border-radius:20px;border:1px solid var(--border)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px;perspective:1000px}
+.card{position:relative;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;backdrop-filter:blur(14px);opacity:0;transform:translateY(34px);transition:opacity .6s,transform .6s,border-color .3s,box-shadow .3s}
+.card.in{opacity:1;transform:none}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;z-index:2;background:linear-gradient(90deg,var(--cyan),var(--mag),var(--yel));background-size:200% 100%;animation:flow 5s linear infinite}
+.card:hover{border-color:var(--gold);box-shadow:0 18px 44px rgba(0,0,0,.45),0 0 30px rgba(242,193,78,.12)}
+.imgw{position:relative;height:220px;background:var(--soft);overflow:hidden;cursor:pointer}
+.imgw img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.card:hover .imgw img{transform:scale(1.1)}
+.imgw::after{content:'';position:absolute;top:0;bottom:0;width:60%;left:-80%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent);transform:skewX(-20deg);transition:left .7s;pointer-events:none}
+.card:hover .imgw::after{left:130%}
+.price-tag{position:absolute;bottom:10px;right:10px;z-index:2;background:rgba(0,0,0,.72);color:var(--gold);font-weight:900;padding:4px 14px;border-radius:30px;backdrop-filter:blur(6px);border:1px solid rgba(242,193,78,.5)}
+.idb{position:absolute;top:8px;left:8px;z-index:3;background:#000;color:#0f0;font:700 12px monospace;padding:2px 8px;border-radius:6px;direction:ltr}
+.edsel{position:absolute;top:36px;left:8px;right:8px;z-index:4;font:600 12px Cairo,sans-serif;padding:4px;border-radius:6px;background:#000;color:#0f0;border:1px solid #0f0}
+#edpanel{position:fixed;bottom:8px;left:8px;right:8px;z-index:5000;background:#000;color:#0f0;padding:8px;border-radius:10px;font:12px Cairo,sans-serif;border:1px solid #0f0}
+#edpanel textarea{width:100%;height:100px;background:#111;color:#0f0;border:1px solid #0f0;border-radius:6px;direction:ltr;font:11px monospace;margin-top:6px}
+#edpanel button{background:#0f0;color:#000;border:none;border-radius:6px;padding:4px 14px;font:700 12px Cairo,sans-serif;cursor:pointer;margin-top:6px}
+.info{padding:14px 15px 6px;flex-grow:1}
+.ptag{display:inline-block;font-size:.78rem;font-weight:800;color:#1a1200;background:linear-gradient(135deg,var(--gold),var(--gold2));padding:1px 12px;border-radius:20px;margin-bottom:6px}
+.title{font-size:1rem;font-weight:700;line-height:1.5}
+.prow{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.pp{flex-shrink:0;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1a1200;font-weight:900;font-size:.95rem;padding:3px 14px;border-radius:30px;box-shadow:0 4px 12px rgba(242,193,78,.3)}
+.card.pen .imgw img{object-fit:contain;padding:10px}
+.acts{display:flex;gap:8px;padding:10px 15px 15px}
+.add{flex:1;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1a1200;border:none;padding:11px;border-radius:12px;font:inherit;font-weight:800;cursor:pointer;display:flex;justify-content:center;align-items:center;gap:7px;transition:.2s}
+.add:hover{filter:brightness(1.1);transform:translateY(-2px)}
+.add:active{transform:scale(.95)}
+.view{width:46px;background:var(--soft);color:var(--text);border:1px solid var(--border);border-radius:12px;cursor:pointer;transition:.2s}
+.view:hover{border-color:var(--gold);color:var(--gold)}
+.empty{text-align:center;padding:60px 0;color:var(--muted)}
+.empty i{font-size:3rem;color:var(--gold);margin-bottom:12px}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(5px);z-index:1000;opacity:0;visibility:hidden;transition:.3s}
+.ov.open{opacity:1;visibility:visible}
+.side{position:fixed;top:0;left:0;width:100%;max-width:390px;height:100vh;background:var(--bg);z-index:1001;display:flex;flex-direction:column;transform:translateX(-105%);transition:transform .4s cubic-bezier(.2,.9,.3,1);box-shadow:8px 0 40px rgba(0,0,0,.6);border-right:1px solid var(--border)}
+.side.open{transform:none}
+.sh{padding:20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);background:var(--soft);color:var(--gold);font-weight:800;font-size:1.15rem}
+.sh button{background:none;border:none;color:var(--danger);font-size:1.5rem;cursor:pointer}
+.items{flex-grow:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:14px}
+.ci{display:flex;gap:12px;padding-bottom:12px;border-bottom:1px solid var(--border);animation:pop2 .35s both}
+@keyframes pop2{from{opacity:0;transform:translateX(-20px)}}
+.ci img{width:64px;height:64px;border-radius:10px;object-fit:cover;border:1px solid var(--border)}
+.cinf{flex-grow:1}
+.ct{font-size:.9rem;font-weight:600}
+.cp{color:var(--gold);font-weight:800;font-size:.9rem}
+.qty{display:flex;align-items:center;gap:10px;margin-top:4px}
+.qb{width:26px;height:26px;border-radius:50%;border:1px solid var(--border);background:var(--soft);color:var(--text);cursor:pointer;font-size:.7rem}
+.qb:hover{background:var(--gold);color:#000}
+.cart-empty{text-align:center;color:var(--muted);margin-top:60px}
+.cart-empty i{font-size:3rem;color:var(--gold);opacity:.5;margin-bottom:10px}
+.sf{padding:20px;border-top:1px solid var(--border);background:var(--soft)}
+.tot{display:flex;justify-content:space-between;font-size:1.2rem;font-weight:800;color:var(--gold);margin-bottom:14px}
+.checkout{width:100%;background:var(--wa);color:#fff;border:none;padding:14px;border-radius:12px;font:inherit;font-weight:800;font-size:1rem;cursor:pointer;display:flex;justify-content:center;gap:8px;transition:.2s}
+.checkout:hover{background:#1ebe57;transform:translateY(-2px)}
+.mo{position:fixed;inset:0;background:rgba(0,0,0,.78);backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;padding:20px;z-index:2000}
+.mo.open{display:flex;animation:fade .25s}
+@keyframes fade{from{opacity:0}}
+.modal{background:var(--bg);border:1px solid var(--border);border-radius:22px;max-width:470px;width:100%;overflow:hidden;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.6);animation:up .4s cubic-bezier(.2,1.2,.4,1)}
+@keyframes up{from{opacity:0;transform:translateY(40px) scale(.94)}}
+.mclose{position:absolute;top:12px;left:12px;width:38px;height:38px;border-radius:50%;background:rgba(0,0,0,.6);color:#fff;border:none;cursor:pointer;z-index:2;transition:.25s}
+.mclose:hover{background:var(--danger);transform:rotate(90deg)}
+.mimg{width:100%;height:300px;object-fit:contain;background:var(--soft);padding:10px;display:block}
+.mb{padding:20px 22px 24px}
+.mb h3{font-size:1.3rem;margin-bottom:8px}
+.mp{font-size:1.7rem;font-weight:900;color:var(--gold);margin-bottom:16px}
+.ma{display:flex;gap:10px}
+.ma button,.ma a{flex:1;text-align:center;padding:13px;border-radius:12px;text-decoration:none;font:inherit;font-weight:800;border:none;cursor:pointer;transition:.2s}
+.ma button{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1a1200}
+.ma a{background:var(--wa);color:#fff}
+.ma button:hover,.ma a:hover{transform:translateY(-2px)}
+.fab{position:fixed;bottom:22px;right:22px;z-index:90;display:flex;flex-direction:column;gap:12px}
+.fab a{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:1.6rem;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.45);transition:.25s}
+.fab a:hover{transform:scale(1.12)}
+.f-wa{background:var(--wa);animation:pulse 2.2s infinite}
+.f-call{background:linear-gradient(135deg,var(--cyan),#0a6fd6);font-size:1.3rem!important}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}100%{box-shadow:0 0 0 22px rgba(37,211,102,0)}}
+.top{position:fixed;bottom:22px;left:22px;width:46px;height:46px;border-radius:50%;background:var(--gold);color:#000;border:none;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(20px);transition:.3s;z-index:90}
+.top.show{opacity:1;visibility:visible;transform:none}
+.toast{position:fixed;bottom:100px;left:50%;transform:translate(-50%,30px);background:var(--wa);color:#fff;padding:10px 24px;border-radius:40px;font-weight:700;z-index:3000;opacity:0;transition:.35s;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+footer{text-align:center;padding:40px 16px 10px;color:var(--muted);font-size:.9rem}
+footer a{color:var(--gold);font-weight:800;text-decoration:none;direction:ltr;display:inline-block;margin:0 6px}
+footer a.dev-foot{display:block;margin:18px auto 8px}
+@media(max-width:480px){.grid{grid-template-columns:repeat(2,1fr);gap:12px}.imgw{height:160px}.title{font-size:.85rem}.pp{font-size:.8rem;padding:2px 10px}.prow{flex-direction:column;align-items:flex-start;gap:4px}.acts{flex-direction:column;padding:8px 10px 12px}.view{width:100%;height:34px}.info{padding:10px}.fab a{width:52px;height:52px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.card{opacity:1;transform:none}}
+.brand-logo{display:block;width:130px;height:130px;margin:0 auto 10px;border-radius:50%;object-fit:cover;background:#fff;border:3px solid var(--gold);box-shadow:0 0 28px rgba(242,193,78,.4);animation:logoIn .9s ease both}
+@keyframes logoIn{from{opacity:0;transform:scale(.6) rotate(-12deg)}to{opacity:1;transform:none}}
+#welcome{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,#151826,#07080d);transition:opacity .6s,visibility .6s;text-align:center;padding:20px}
+#welcome.hide{opacity:0;visibility:hidden}
+#welcome img{width:150px;height:150px;border-radius:50%;object-fit:cover;background:#fff;border:3px solid var(--gold);box-shadow:0 0 40px rgba(242,193,78,.45);animation:logoIn 1s ease both}
+#welcome h2{color:#f6f6f8;font-size:1.7rem;font-weight:900;margin-top:18px;animation:wUp .8s .3s ease both}
+#welcome p{color:#9aa0b4;margin-top:6px;animation:wUp .8s .5s ease both}
+#welcome button{margin-top:22px;padding:12px 34px;border:0;border-radius:40px;font:700 1rem 'Cairo',sans-serif;cursor:pointer;color:#07080d;background:linear-gradient(135deg,var(--gold),var(--gold2));box-shadow:0 8px 24px rgba(242,193,78,.35);animation:wUp .8s .7s ease both}
+@keyframes wUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="welcome"><div>
+  <img src="logo.webp" alt="Graphics">
+  <h2>أهلاً بيك في Graphics 👋</h2>
+  <p>طباعة · تصميم · إعلانات — نورتنا، اتفرج على منتجاتنا</p>
+  <button id="welcomeBtn">ادخل الكتالوج</button>
+</div></div>
+<script>(function(){var w=document.getElementById('welcome'),c=function(){w.classList.add('hide')};document.getElementById('welcomeBtn').onclick=c;setTimeout(c,3500)})();</script>
+<div class="bg"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+<canvas id="sparks"></canvas>
+
+<header>
+  <div class="ctrl">
+    <button class="ibtn" id="themeToggle" title="تبديل الوضع" aria-label="تبديل الوضع"><i class="fa-solid fa-moon"></i></button>
+    <button class="ibtn" id="cartBtn" title="سلة المشتريات" aria-label="سلة المشتريات"><i class="fa-solid fa-cart-shopping"></i><span class="cart-count" id="cartCount">0</span></button>
+  </div>
+  <img class="brand-logo" src="logo.webp" alt="Graphics - طباعة وتصميم وإعلانات">
+  <h1>Graphics</h1>
+  <p class="tag">طباعة بانر - فليكس - استيكر</p>
+  <p class="tag">قص وحفر خشب ليزر · لوح مدرسية · دروع وهدايا</p>
+  <div class="phones">
+    <a class="phone-pill" href="tel:+201225374032"><i class="fa-solid fa-phone"></i> +20 12 25374032</a>
+    <a class="phone-pill" href="tel:+201035370266"><i class="fa-solid fa-phone"></i> +20 10 35370266</a>
+  </div>
+</header>
+
+<div class="contact">
+  <a href="https://www.instagram.com/graphics.cnc" target="_blank" rel="noopener" class="social ig"><i class="fa-brands fa-instagram"></i> انستجرام</a>
+  <a href="https://www.facebook.com/share/1C6XDgBpyW/" target="_blank" rel="noopener" class="social fb"><i class="fa-brands fa-facebook-f"></i> فيسبوك</a>
+  <a href="https://t.me/+BAnQVH5uihczZDdk" target="_blank" rel="noopener" class="social tg"><i class="fa-brands fa-telegram"></i> تليجرام</a>
+  <a href="https://wa.me/201225374032" target="_blank" rel="noopener" class="social wa"><i class="fa-brands fa-whatsapp"></i> واتساب</a>
+</div>
+
+<div class="search"><input type="search" id="searchInput" aria-label="بحث" placeholder="ابحث عن منتج بالاسم..."><i class="fa-solid fa-magnifying-glass"></i></div>
+<div class="chips" id="chips"></div>
+<div class="chips subchips" id="subchips"></div>
+<div class="container" id="mainContainer"></div>
+
+<footer>
+  للطلب والاستفسار: <a href="tel:+201225374032">+20 12 25374032</a> - <a href="tel:+201035370266">+20 10 35370266</a><br>
+  <a class="dev-foot" href="https://wa.me/201229808367" target="_blank" rel="noopener" title="تصميم وتطوير: Anas Atef"><img src="logo_anas.png" alt="Anas Atef" onerror="this.src='images/logo_anas.png';this.onerror=function(){this.parentNode.style.display='none'}"></a>
+  <div style="margin-top:10px;padding-top:8px;border-top:1px solid rgba(255,255,255,.15)">تصميم وتطوير الموقع: Anas Atef — <a href="https://wa.me/201229808367" target="_blank" rel="noopener">01229808367</a> - <a href="https://wa.me/201278739025" target="_blank" rel="noopener">01278739025</a></div>
+
+  © Graphics
+</footer>
+
+<div class="fab">
+  <a class="f-call" href="tel:+201225374032" title="اتصل بنا"><i class="fa-solid fa-phone"></i></a>
+  <a class="f-wa" href="https://wa.me/201225374032" target="_blank" rel="noopener" title="واتساب"><i class="fa-brands fa-whatsapp"></i></a>
+</div>
+
+<div class="ov" id="cartOverlay"></div>
+<div class="side" id="cartSidebar">
+  <div class="sh"><span><i class="fa-solid fa-cart-shopping"></i> سلة المشتريات</span><button id="closeCartBtn" aria-label="إغلاق السلة"><i class="fa-solid fa-xmark"></i></button></div>
+  <div class="items" id="cartItems"></div>
+  <div class="sf">
+    <div class="tot"><span>الإجمالي:</span><span id="cartTotal">0 ج</span></div><div id="cartNote" style="font-size:.8rem;color:var(--muted);margin:-4px 0 8px;display:none">* بعض المنتجات سعرها حسب الطلب وسيتم تأكيده عبر واتساب</div><button id="clearCartBtn" style="width:100%;background:none;border:1px solid var(--border);color:var(--danger);padding:8px;border-radius:10px;font:inherit;font-weight:700;cursor:pointer;margin-bottom:8px"><i class="fa-solid fa-trash"></i> تفريغ السلة</button>
+    <button class="checkout" id="checkoutBtn"><i class="fa-brands fa-whatsapp"></i> إتمام الطلب عبر واتساب</button>
+  </div>
+</div>
+
+<div class="mo" id="modalOverlay">
+  <div class="modal">
+    <button class="mclose" id="modalClose" aria-label="إغلاق"><i class="fa-solid fa-xmark"></i></button>
+    <img src="" alt="" class="mimg" id="modalImg">
+    <div class="mb">
+      <h3 id="modalTitle"></h3><div class="mp" id="modalPrice"></div>
+      <div class="ma"><button id="modalAdd"><i class="fa-solid fa-cart-plus"></i> إضافة للسلة</button><a href="#" id="modalWa" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> استفسار</a></div>
+    </div>
+  </div>
+</div>
+
+<button class="top" id="scrollTop" aria-label="للأعلى"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="toast" id="toast"></div>
+
+<script>
+const WA='201225374032';
+const SHOWID=location.hash==='#ids';
+
+const raw=[
+["نوت بوك وميدالية بتصميم شخصي",80,"s1,notebook"],
+["ولاعة بالحفر",100,"s2"],
+["قلم معدن بالحفر",60,"s3"],
+["قلم معدن بالحفر",60,"s4"],
+["قلم معدن بالحفر",60,"s7"],
+["قلم معدن بالحفر",60,"s64"],
+["درع خشب",75,"s5"],
+["نوت بوك وميدالية بتصميم شخصي",80,"s6,notebook"],
+["ماج حراري بالحفر",185,"s8"],
+["درع كريستال كبير",500,"s9"],
+["ماج حراري بالحفر",185,"s10,s94,nour_mug"],
+["درع خشب",50,"s11"],
+["محفظة رجالي بالحفر",150,"s12"],
+["درع خشب",75,"s13"],
+["نوت بوك وميدالية بتصميم شخصي",80,"s14,notebook"],
+["يافطة مكتب كريستال",350,"s15"],
+["درع خشب",75,"s16"],
+["ميدالية خشب طبقتين وطباعة ألوان",10,"s17"],
+["ميدالية خشب طبقتين",15,"s18"],
+["نوت بوك وميدالية بتصميم شخصي",80,"s19,notebook"],
+["درع كريستال وسط",400,"s20"],
+["درع قطيفة عادي",160,"s21"],
+["محفظة رجالي بالحفر",150,"s22"],
+["درع قطيفة لوكس",250,"s23"],
+["ماج حراري بالحفر",185,"s24"],
+["ميدالية جلد بالحفر",65,"s25"],
+["محفظة رجالي بالحفر",150,"s26"],
+["يافطة مكتب كريستال",350,"s27"],
+["نوت بوك وميدالية بتصميم شخصي",80,"s28,notebook"],
+["ولاعة بالحفر",100,"s29"],
+["ماج حراري ديجيتال بالحفر",200,"s30"],
+["درع قطيفة لوكس",250,"s31"],
+["ولاعة بالحفر",100,"s32"],
+["درع خشب",75,"s33"],
+["درع خشب",75,"s34"],
+["محفظة رجالي بالحفر",150,"s35"],
+["ماج حراري بالحفر",185,"s36,s93,mokhtar_mug"],
+["درع خشب",75,"s37"],
+["درع قطيفة لوكس",250,"s38"],
+["كفر شهادة تقدير",60,"s40"],
+["ميدالية جلد بالحفر",65,"s41"],
+["محفظة رجالي بالحفر",150,"s42"],
+["ولاعة بالحفر",300,"s43"],
+["كفر شهادة تقدير",60,"s44"],
+["ماكيت الساعة (أسماء الإشارة)",200,"s45"],
+["كفر شهادة تقدير",60,"s47"],
+["نوت بوك وميدالية بتصميم شخصي",70,"s49,notebook"],
+["ولاعة بالحفر",100,"s50"],
+["كفر شهادة كرتون",35,"s51"],
+["ماكيت خشب وطباعة فينيل",250,"s52"],
+["درع تخرج كي جي",250,"s53"],
+["ولاعة بالحفر",100,"s54"],
+["درع كريستال وسط",400,"s55"],
+["درع خشب",75,"s56"],
+[" حراري بالحفر",185,"s59,s92"],
+["ماج حراري بالحفر",185,"s57,s99,hisham_mug"],
+["درع خشب (برواز)",170,"s58"],
+["درع قطيفة لوكس",250,"s60"],
+["درع خشب",75,"s61"],
+["ألبوم 20 صورة",120,"s62"],
+["ماكيت معالم بورسعيد",600,"s63"],
+["درع كريستال وسط",400,"s65"],
+["درع تخرج كي جي",250,"s66"],
+["ماكيت سد وطاقة شمسية",500,"s67"],
+["درع خشب وبرواز بإطار ذهبي",70,"s68"],
+["ولاعة بالحفر",100,"s69"],
+["نوت بوك وميدالية بتصميم شخصي",80,"s70,notebook"],
+["درع كريستال وسط",400,"s71"],
+["ماكيت هيئة قناة السويس — السعر حسب الحجم",0,"s72"],
+["ولاعة بالحفر",100,"s74"],
+["درع خشب",75,"s75"],
+["درع خشب تربية فنية",50,"s76"],
+["درع خشب طبق مستورد كبير",1150,"s77"],
+["درع خشب",75,"s79"],
+["درع تخرج كي جي",250,"s80"],
+["درع خشب",75,"s81"],
+["ماج حراري بالحفر",185,"s82"],
+["ماج حراري بالحفر",185,"s84,s101,nourhan_mug"],
+["ولاعة بالحفر",300,"s85"],
+["دبابيس خشب",15,"s86"],
+["نوت بوك وميدالية بتصميم شخصي",80,"s87,notebook"],
+["نوت بوك وميدالية بتصميم شخصي",80,"s88,s90,notebook"],
+["علبة مولد نبوي شريف",100,"s96"],
+["علبة هدايا خشب بزخرفة ذهبي",150,"s95,s97,gift_box"],
+["علبة هدايا خشب بزخرفة أرابيسك",130,"s98"],
+["محفظة رجالي بالحفر",150,"111"],
+["محفظة رجالي بالحفر",150,"115"],
+["محفظة رجالي بالحفر",150,"113"],
+["محفظة رجالي بالحفر",150,"102"],
+["محفظة رجالي بالحفر (حفر من الداخل)",150,"103"],
+["ولاعة بالحفر",100,"112"],
+["ولاعة بالحفر",100,"114"],
+["ولاعة بالحفر",100,"107"],
+["ميدالية جلد بالحفر",65,"108"],
+["ميدالية جلد بالحفر",65,"109"],
+["كفر شهادة تقدير",60,"104"],
+["بانر عمارة الفيروز — السعر حسب المقاس",0,"110"],
+["درع كريستال وسط",400,"136"],
+["درع كريستال وسط",400,"129"],
+["درع كريستال وسط",400,"124"],
+["درع كريستال وسط",400,"130"],
+["درع خشب",120,"123"],
+["درع خشب",75,"125"],
+["درع خشب",75,"126"],
+["درع خشب",75,"127"],
+["درع خشب",75,"128"],
+["درع خشب",75,"137"],
+["يافطة مكتب كريستال",350,"131"],
+["يافطة مكتب كريستال",350,"132"],
+["يافطة مكتب كريستال",350,"133"],
+["يافطة مكتب كريستال",350,"134"],
+["يافطة مكتب كريستال",350,"135"],
+["لوح مدرسية — المفعول لأجله (مقاس 70سم × 1م بدون خشب)",85,"116"],
+["لوح مدرسية — Prepositions of Time (مقاس 70سم × 1م بدون خشب)",85,"117"],
+["لوح مدرسية — وطني (مقاس 70سم × 1م بدون خشب)",85,"118"],
+["لوح مدرسية — Stay Healthy (مقاس 70سم × 1م بدون خشب)",85,"119"],
+["لوح مدرسية — مصر في عصري البطالمة والرومان (مقاس 70سم × 1م بدون خشب)",85,"121"],
+["لوح مدرسية — جمال التنوع (مقاس 70سم × 1م بدون خشب)",85,"122"],
+["كفر شهادة تقدير",60,"s139"],
+["كفر شهادة تقدير",60,"s140"],
+["درع خشب",75,"s147"],
+["كفر شهادة تقدير",60,"s144"],
+["درع كريستال كبير",500,"s141"],
+["درع كريستال كبير",500,"s143"],
+["درع كريستال كبير",500,"s149"],
+["درع كريستال كبير",500,"s160"],
+["يافطة مكتب كريستال",350,"s142"],
+["يافطة مكتب كريستال",350,"s148"],
+["يافطة مكتب كريستال",350,"s161"],
+["يافطة مكتب كريستال",350,"162"],
+["بانر أسماك الفيروز — السعر حسب المقاس",0,"s146"],
+["بانر مركز المنصور — السعر حسب المقاس",0,"s151"],
+["بانر مطعم أولاد رزق — السعر حسب المقاس",0,"s152"],
+["ميدالية جلد بالحفر",65,"s157"],
+["ميدالية جلد بالحفر",65,"s158"],
+["ميدالية جلد بالحفر",65,"s159"],
+["ميدالية خشب بدبوس Star of the Week — السعر حسب المقاس والخامة",15,"s145"],
+["علبة مولد نبوي شريف",50,"s156"],
+["ماكيت جندي عسكري",1500,"s200"],
+["نوت بوك بتصميم شخصي",70,"s155"],
+["ميدالية ألبوم صور صغير",120,"s150"],
+["ماكيت روبوت بانكوك — السعر حسب المقاس",0,"s201"],
+["نوت بوك بتصميم شخصي",70,"s163"],
+["ميدالية خشب دائرية بتصميم خاص — السعر حسب المقاس والخامة",10,"s138"],
+["درع كريستال كبير",500,"s164"],
+["درع كريستال كبير",500,"s165"],
+["درع كريستال كبير",500,"s166"],
+["درع خشب في علبة فاخرة",850,"s167"],
+["ماكيت الجهاز الهضمي للإنسان",500,"s168"],
+["درع كريستال كبير",500,"s169"],
+["كأس ذهبي بقاعدة",190,"s170"]
+];
+
+/* تصحيح الاسم والسعر — المفتاح هو رقم الصورة (افتح الصفحة بـ #ids لتعديلها بالقوائم ونسخ الجدول) */
+const FIX={
+  "s40":["نوت بوك أسود بقلم بتصميم شخصي",200],
+  "s44":["درع خشب",50],
+  "s47":["درع خشب",75],
+  "s39":["درع كريستال وسط",400],
+  "s144":["درع قطيفة لوكس",250],
+  "104":["درع خشب",75]
+};
+
+const DIRS=['images/','','../images/','/images/'];
+const cap=k=>k.charAt(0).toUpperCase()+k.slice(1);
+const EXT=['jpg','jpeg','png','webp','JPG','JPEG','PNG','WEBP'];
+const cands=keys=>{const o=[];keys.forEach(k=>{
+  if(k.startsWith('http')){o.push(k);return}
+  const names=/^\d+$/.test(k)?[k,'s'+k]:[k];
+  names.forEach(n=>DIRS.forEach(d=>EXT.forEach(x=>{
+    o.push(d+n+'.'+x);
+    if(cap(n)!==n)o.push(d+cap(n)+'.'+x)
+  })))
+});return o};
+
+const productsData=raw.map((r,i)=>{
+  const f=FIX[r[2]]||FIX[r[2].split(',')[0]];
+  return {id:'p'+i,name:f?f[0]:r[0],price:f?f[1]:r[1],key:r[2],c:cands(r[2].split(','))};
+});
+const num=p=>{const m=(p.key||'').match(/\d+/);return m?+m[0]:0};
+
+const cats=[['الكل',''],['متنوع','متنوع'],['الدروع','درع'],['يافطة مكتب','يافطة'],['لوح مدرسية','لوح'],['الولاعات','ولاعة'],['المحافظ','محفظة'],['الماجات','ماج|مج'],['الميداليات','ميدال'],['النوت بوك','نوت بوك'],['العلب','علبة'],['الماكيت','ماكيت'],['الأقلام','قلم'],['البانر','بانر'],['كفارات شهادات','كفر']];
+const isCover=p=>p.name.includes('كفر');
+const catFn={
+  'متنوع':p=>p.name.includes('برواز بإطار ذهب')||p.name.includes('كأس'),
+  'درع':p=>p.name.includes('درع')&&!isCover(p)&&!p.name.includes('برواز بإطار ذهب'),
+  'ميدال':p=>p.name.includes('ميدال')&&!p.name.includes('نوت بوك'),
+  'قلم':p=>p.name.includes('قلم')&&!p.name.includes('نوت بوك'),
+  'علبة':p=>p.name.includes('علبة')&&!p.name.includes('درع'),
+  'بانر':p=>p.name.includes('بانر')&&!p.name.includes('لوح')
+};
+const inCat=(p,k)=>(catFn[k]||(q=>q.name.includes(k)))(p);
+const isPen=p=>catFn['قلم'](p);
+const subs=[['دروع خشب','خشب'],['دروع كريستال','كريستال|كرستال'],['دروع قطيفة','قطيفة|قطيفه']];
+
+const $=id=>document.getElementById(id);
+const norm=t=>(t||'').toLowerCase().replace(/[\u064B-\u0652\u0640]/g,'').replace(/[أإآ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/\s+/g,' ').trim();
+const fmt=p=>p===0?'حسب الطلب':p+' ج';
+const esc=s=>s.replace(/"/g,'&quot;');
+const imgAttrs=p=>{const l=rank(p.c);return `src="${esc(l[0])}" data-c="${esc(l.join('|'))}" data-i="1" onerror="fb(this)" onload="okImg(this)"`};
+let GOOD=(()=>{try{return JSON.parse(localStorage.getItem('graphics-imgpat')||'null')}catch(e){return null}})();
+function rank(list){if(!GOOD)return list;const g=list.filter(u=>u.startsWith(GOOD[0])&&u.endsWith('.'+GOOD[1])&&!u.slice(GOOD[0].length).includes('/'));return g.concat(list.filter(u=>!g.includes(u)))}
+function okImg(el){const u=el.getAttribute('src')||'';if(u.startsWith('data:')||u.startsWith('http'))return;const m=u.match(/^(.*\/)?[^\/]+\.([a-zA-Z]+)$/);if(m){const pat=[m[1]||'',m[2]];if(!GOOD||GOOD[0]!==pat[0]||GOOD[1]!==pat[1]){GOOD=pat;try{localStorage.setItem('graphics-imgpat',JSON.stringify(pat))}catch(e){}}}}
+function fb(el){const l=(el.dataset.c||'').split('|').filter(Boolean),i=+el.dataset.i||0;
+  if(i<l.length){el.dataset.i=i+1;el.src=l[i]}else{el.onerror=null;el.src=failSvg(l[0]||'')}}
+function failSvg(u){let a=u;try{a=new URL(u,location.href).href}catch(e){}
+  return 'data:image/svg+xml;utf8,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200"><rect fill="#1b1d29" width="300" height="200"/><text x="50%" y="45%" fill="#f2c14e" font-family="Arial" font-size="16" text-anchor="middle">صورة غير متوفرة</text><text x="50%" y="62%" fill="#9aa0b4" font-family="Arial" font-size="8" text-anchor="middle">${a.replace(/&/g,'')}</text></svg>`)}
+function setImg(el,p){const l=rank(p.c);el.dataset.c=l.join('|');el.dataset.i=1;el.onerror=function(){fb(this)};el.onload=function(){okImg(this)};el.src=l[0]}
+function tryLoad(list,ok,fail){let i=0;(function n(){if(i>=list.length){fail&&fail();return}
+  const im=new Image();im.onload=()=>ok(list[i]);im.onerror=()=>{i++;n()};im.src=list[i]})()}
+
+const sd=n=>DIRS.map(d=>d+n);
+tryLoad(sd('logo.png'),s=>{$('favicon').href=s});
+tryLoad(sd('s100.jpg'),s=>document.documentElement.style.setProperty('--bgimg',`url("${s}")`));
+
+/* ===== وضع التعديل (يظهر فقط مع #ids) ===== */
+const PRESETS=[
+  ["كفر شهادة تقدير",60],
+  ["درع خشب",75],
+  ["درع كريستال وسط",400],
+  ["درع كريستال كبير",500],
+  ["درع قطيفة لوكس",250],
+  ["درع قطيفة لوكس",250],
+  ["نوت بوك أسود بقلم بتصميم شخصي",200]
+];
+const EDITS=Object.assign({},FIX);
+function updatePanel(){
+  const ta=$('edta');if(!ta)return;
+  const k=Object.keys(EDITS);
+  ta.value='const FIX={\n'+k.map(x=>'  '+JSON.stringify(x)+':'+JSON.stringify(EDITS[x])).join(',\n')+'\n};';
+}
+function editSel(id,sel){
+  if(sel.value==='')return;
+  const p=productsData.find(x=>x.id===id);if(!p)return;
+  const pr=PRESETS[+sel.value];if(!pr)return;
+  p.name=pr[0];p.price=pr[1];
+  const card=sel.closest('.card');
+  if(card){
+    const t=card.querySelector('.title');if(t)t.textContent=p.name;
+    const pt=card.querySelector('.price-tag');if(pt)pt.textContent=fmt(p.price);
+  }
+  EDITS[p.key.split(',')[0]]=[pr[0],pr[1]];
+  updatePanel();
+}
+function copyPanel(){
+  const ta=$('edta');ta.select();
+  try{navigator.clipboard.writeText(ta.value)}catch(e){document.execCommand('copy')}
+  toast('✓ تم نسخ الجدول');
+}
+if(SHOWID){
+  const d=document.createElement('div');d.id='edpanel';
+  d.innerHTML='<div>وضع التعديل: غيّر نوع أي صورة من القائمة اللي عليها، وبعدين انسخ الجدول وحطه مكان const FIX في الكود</div><textarea id="edta" readonly></textarea><button onclick="copyPanel()">نسخ الجدول</button>';
+  document.body.appendChild(d);
+  updatePanel();
+}
+
+let cart=[],cur=null,catKey='',subKey='',kw='';
+try{cart=(JSON.parse(localStorage.getItem('graphics-cart2')||'[]')||[]).filter(i=>i&&i.id&&i.qty>0)}catch(e){cart=[]}
+$('chips').innerHTML=cats.map((c,i)=>`<button class="chip${i?'':' on'}" data-k="${c[1]}">${c[0]}</button>`).join('');
+
+function renderSub(){
+  const box=$('subchips');
+  if(catKey==='درع'){
+    box.innerHTML=subs.map(s=>`<button class="chip${s[1]===subKey?' on':''}" data-s="${s[1]}">${s[0]}</button>`).join('');
+    box.classList.add('show');
+  }else{box.innerHTML='';box.classList.remove('show')}
+}
+$('chips').onclick=e=>{const b=e.target.closest('.chip');if(!b)return;
+  document.querySelectorAll('#chips .chip').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');catKey=b.dataset.k;subKey='';renderSub();render()};
+$('subchips').onclick=e=>{const b=e.target.closest('.chip');if(!b)return;
+  subKey=b.dataset.s;renderSub();render()};
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+function edSelHtml(p){
+  if(!SHOWID)return '';
+  return `<select class="edsel" onclick="event.stopPropagation()" onchange="editSel('${p.id}',this)"><option value="">— غيّر النوع —</option>${PRESETS.map((x,i)=>`<option value="${i}">${x[0]} — ${x[1]}</option>`).join('')}</select>`;
+}
+function render(){
+  const ks=catKey?catKey.split('|'):[];
+  const sk=(catKey==='درع'&&subKey)?subKey.split('|'):[];
+  const list=productsData.filter(p=>norm(p.name).includes(kw)
+    &&(!ks.length||ks.some(k=>inCat(p,k)))
+    &&(!sk.length||sk.some(k=>p.name.includes(k))));
+  list.sort((a,b)=>(isCover(a)-isCover(b))||num(b)-num(a));
+  const c=$('mainContainer');
+  if(!list.length){c.innerHTML='<div class="empty"><i class="fa-solid fa-magnifying-glass"></i><h3>لا توجد نتائج مطابقة</h3></div>';return}
+  c.innerHTML=`<div class="sec"><i class="fa-solid fa-box"></i> المنتجات<span class="count">${list.length} منتج</span></div><div class="grid">`+list.map(p=>`
+  <div class="card${isPen(p)?' pen':''}">
+    <div class="imgw" onclick="openModal('${p.id}')"><img ${imgAttrs(p)} alt="${esc(p.name)}" loading="lazy"><span class="price-tag">${fmt(p.price)}</span>${SHOWID?`<span class="idb">${p.key}</span>`:''}${edSelHtml(p)}</div>
+    <div class="info"><div class="title">${p.name}</div></div>
+    <div class="acts"><button class="add" onclick="addToCart('${p.id}')"><i class="fa-solid fa-plus"></i> أضف للسلة</button><button class="view" onclick="openModal('${p.id}')"><i class="fa-regular fa-eye"></i></button></div>
+  </div>`).join('')+'</div>';
+  c.querySelectorAll('.card').forEach((el,i)=>{el.style.transitionDelay=(i%6)*70+'ms';io.observe(el)});
+}
+
+const mo=$('modalOverlay');
+const closeModal=()=>{mo.classList.remove('open');document.body.style.overflow=''};
+window.openModal=id=>{const p=productsData.find(x=>x.id===id);if(!p)return;cur=p;
+  setImg($('modalImg'),p);
+  $('modalTitle').textContent=p.name;$('modalPrice').textContent=fmt(p.price);
+  $('modalWa').href=`https://wa.me/${WA}?text=${encodeURIComponent('مرحباً Graphics، أريد الاستفسار عن: '+p.name)}`;
+  mo.classList.add('open');document.body.style.overflow='hidden'};
+$('modalClose').onclick=closeModal;mo.onclick=e=>{if(e.target===mo)closeModal()};
+$('modalAdd').onclick=()=>{if(cur){addToCart(cur.id);closeModal()}};
+
+const side=$('cartSidebar'),ov=$('cartOverlay');
+const openCart=()=>{side.classList.add('open');ov.classList.add('open');document.body.style.overflow='hidden'},closeCart=()=>{side.classList.remove('open');ov.classList.remove('open');document.body.style.overflow=''};
+addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeCart()}});
+function toast(t){const e=$('toast');e.textContent=t;e.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('show'),1600)}
+window.addToCart=id=>{if(!productsData.find(x=>x.id===id))return;
+  const ex=cart.find(i=>i.id===id);ex?ex.qty++:cart.push({id,qty:1});
+  updateCart();toast('✓ تمت الإضافة للسلة');
+  const b=$('cartBtn');b.style.transform='scale(1.25)';setTimeout(()=>b.style.transform='',220)};
+window.changeQty=(id,n)=>{const it=cart.find(i=>i.id===id);if(!it)return;it.qty+=n;if(it.qty<=0)cart=cart.filter(i=>i.id!==id);updateCart()};
+const cartLines=()=>cart.map(i=>({p:productsData.find(x=>x.id===i.id),qty:i.qty})).filter(l=>l.p);
+function updateCart(){
+  const L=cartLines(),n=L.reduce((s,l)=>s+l.qty,0);
+  $('cartCount').textContent=n;$('cartCount').style.display=n?'grid':'none';
+  $('cartItems').innerHTML=L.length?L.map(l=>`<div class="ci"><img ${imgAttrs(l.p)} alt=""><div class="cinf"><div class="ct">${l.p.name}</div><div class="cp">${fmt(l.p.price)}</div><div class="qty"><button class="qb" onclick="changeQty('${l.p.id}',-1)"><i class="fa-solid fa-minus"></i></button><span>${l.qty}</span><button class="qb" onclick="changeQty('${l.p.id}',1)"><i class="fa-solid fa-plus"></i></button></div></div></div>`).join(''):'<div class="cart-empty"><i class="fa-solid fa-cart-arrow-down"></i><p>السلة فارغة حالياً</p></div>';
+  const hasVar=L.some(l=>!l.p.price);$('cartTotal').textContent=L.reduce((s,l)=>s+l.p.price*l.qty,0)+' ج'+(hasVar?' +':'');$('cartNote').style.display=hasVar?'block':'none';$('clearCartBtn').style.display=L.length?'block':'none';
+  try{localStorage.setItem('graphics-cart2',JSON.stringify(cart))}catch(e){}
+}
+$('cartBtn').onclick=openCart;$('closeCartBtn').onclick=closeCart;ov.onclick=closeCart;
+$('clearCartBtn').onclick=()=>{if(confirm('تفريغ السلة بالكامل؟')){cart=[];updateCart();toast('تم تفريغ السلة')}};
+$('checkoutBtn').onclick=()=>{const L=cartLines();if(!L.length)return toast('السلة فارغة!');
+  let t=0,m='مرحباً Graphics، أريد إتمام الطلب التالي:\n\n';
+  L.forEach((l,k)=>{t+=l.p.price*l.qty;m+=`${k+1}. ${l.p.name} (الكمية: ${l.qty}) - السعر: ${fmt(l.p.price)}\n`});
+  m+=`\nالإجمالي التقريبي: ${t} ج${L.some(l=>!l.p.price)?' (+ منتجات سعرها حسب الطلب)':''}\nأرجو تأكيد الطلب.`;
+  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(m)}`,'_blank')};
+
+let st;$('searchInput').oninput=e=>{clearTimeout(st);st=setTimeout(()=>{kw=norm(e.target.value);render()},180)};
+const tt=$('themeToggle'),ti=tt.querySelector('i');
+const setTheme=t=>{document.documentElement.setAttribute('data-theme',t);ti.className=t==='dark'?'fa-solid fa-moon':'fa-solid fa-sun';try{localStorage.setItem('graphics-theme',t)}catch(e){}};
+setTheme((()=>{try{return localStorage.getItem('graphics-theme')}catch(e){}})()||'dark');
+tt.onclick=()=>setTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');
+const sb=$('scrollTop');addEventListener('scroll',()=>sb.classList.toggle('show',scrollY>400),{passive:true});
+sb.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+
+(()=>{const c=$('sparks'),x=c.getContext('2d');let W,H,ps=[];
+const rs=()=>{W=c.width=innerWidth;H=c.height=innerHeight};rs();addEventListener('resize',rs);
+const cols=['#1fa2ff','#ff2d87','#ffd400','#f2c14e'];
+for(let i=0;i<38;i++)ps.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*2+.6,v:Math.random()*.5+.15,d:Math.random()*2-1,c:cols[i%4],a:Math.random()});
+if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+(function f(){if(document.hidden){requestAnimationFrame(f);return}x.clearRect(0,0,W,H);ps.forEach(p=>{p.y-=p.v;p.x+=p.d*.3;p.a+=.02;if(p.y<-5){p.y=H+5;p.x=Math.random()*W}
+x.globalAlpha=.25+Math.abs(Math.sin(p.a))*.55;x.fillStyle=p.c;x.shadowColor=p.c;x.shadowBlur=10;x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fill()});requestAnimationFrame(f)})();
+})();
+
+updateCart();render();
+</script>
+</body>
+</html>
